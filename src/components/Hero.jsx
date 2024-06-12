@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 function Hero() {
   const [operator, setOperator] = useState('?');
-  const [input1, setInput1] = useState('');
-  const [input2, setInput2] = useState('');
+  const [input1, setInput1] = useState(5);
+  const [input2, setInput2] = useState(5);
   const [result, setResult] = useState('');
 
   const handleCalculate = (operation) => {
@@ -27,21 +27,9 @@ function Hero() {
         <div className="flex flex-col items-center gap-10">
           <h1 className="text-5xl font-bold">حاسبة</h1>
           <div className="flex gap-10 justify-center items-center">
-            <input
-              type="text"
-              placeholder="Type here"
-              value={input1}
-              onChange={(e) => setInput1(e.target.value)}
-              className="input input-bordered w-full max-w-xs"
-            />
+            <div className="text-center ">{input1}</div>
             <h1 className="text-4xl"> {operator} </h1>
-            <input
-              type="text"
-              placeholder="Type here"
-              value={input2}
-              onChange={(e) => setInput2(e.target.value)}
-              className="input input-bordered w-full max-w-xs"
-            />
+            <div className="text-center ">{input2}</div>
             <h1 className="text-4xl"> = </h1>
             <h1 className="text-4xl"> {result} </h1>
           </div>
